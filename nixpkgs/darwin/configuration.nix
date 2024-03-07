@@ -48,6 +48,7 @@
     iterm2
     rectangle
     mos
+    discord
     neovim
     ripgrep
     nerdfonts
