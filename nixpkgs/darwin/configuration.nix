@@ -19,6 +19,7 @@
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
   home-manager.users.amoutill = { pkgs, ... }: {
+    xdg.enable = true;
     #home.packages = with pkgs; [
     #];
     programs.bash.enable = true;
