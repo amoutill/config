@@ -39,10 +39,15 @@
     home.stateVersion = "23.11";
   };
 
+  #Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     iterm2
+    rectangle
+    mos
     neovim
     ripgrep
     nerdfonts
