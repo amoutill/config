@@ -29,12 +29,20 @@
       userName = "amoutill";
       userEmail = "amoutill@student.42lehavre.fr";
     };
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+    };
     home.stateVersion = "23.11";
   };
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    iterm2
     neovim
     ripgrep
     nerdfonts
