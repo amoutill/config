@@ -9,6 +9,28 @@
     XDG_STATE_HOME = "$HOME/.local/state";
   };
 
+  # Importing home-manager
+  imports = [ <home-manager/nix-darwin> ];
+  users.users.amoutill = {
+  name = "amoutill";
+  home = "/Users/amoutill/";
+  };
+
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.users.amoutill = { pkgs, ... }: {
+    #home.packages = with pkgs; [
+    #];
+    programs.bash.enable = true;
+    programs.zsh.enable = true;
+    programs.git = {
+      enable = true;
+      userName = "amoutill";
+      userEmail = "amoutill@student.42lehavre.fr";
+    };
+    home.stateVersion = "23.11";
+  };
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
