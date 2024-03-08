@@ -48,12 +48,14 @@
     iterm2
     rectangle
     mos
+    utm
     discord
     neovim
     ripgrep
     nerdfonts
     norminette
     rustup
+    clang
   ];
 
   # Use a custom configuration.nix location.
