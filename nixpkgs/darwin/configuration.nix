@@ -18,12 +18,19 @@
 
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
-  home-manager.users.amoutill = { pkgs, ... }: {
+  home-manager.users.amoutill = { config, pkgs, ... }: {
     xdg.enable = true;
     #home.packages = with pkgs; [
     #];
-    programs.bash.enable = true;
-    programs.zsh.enable = true;
+    programs.bash = {
+      enable = true;
+      historyFile = "${config.xdg.dataHome}/bash/history";
+    };
+    programs.zsh = {
+      enable = true;
+      dotDir = ".config/zsh";
+      history.path = "${config.xdg.dataHome}/zsh/history";
+    };
     programs.git = {
       enable = true;
       userName = "amoutill";
