@@ -7,6 +7,8 @@
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
+    CARGO_HOME = "$HOME/.local/state/cargo";
+    RUSTUP_HOME = "$HOME/.local/state/rustup";
   };
 
   # Importing home-manager
