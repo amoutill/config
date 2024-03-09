@@ -52,11 +52,17 @@
     discord
     neovim
     ripgrep
-    nerdfonts
     norminette
     rustup
     clang
   ];
+
+  fonts = {
+    fontDir.enable = true;
+    fonts = [
+      pkgs.nerdfonts
+    ];
+  };
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
