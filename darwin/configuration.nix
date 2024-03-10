@@ -9,6 +9,7 @@
     XDG_STATE_HOME = "$HOME/.local/state";
     CARGO_HOME = "$HOME/.local/state/cargo";
     RUSTUP_HOME = "$HOME/.local/state/rustup";
+    LESSHISTFILE="$HOME/.local/state/less/history";
   };
 
   # Importing home-manager
@@ -64,6 +65,7 @@
     norminette
     rustup
     clang
+    xdg-ninja
   ];
 
   fonts = {
@@ -90,7 +92,13 @@
     '';
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;  # default shell on catalina
+  programs.zsh = {
+    enable = true;
+    variables = {
+      ZDOTDIR = "$HOME/.config/zsh";
+    };
+  };
+
   programs.bash.enable = true;
   # programs.fish.enable = true;
 
