@@ -18,7 +18,7 @@
   home = "/Users/amoutill/";
   };
 
-  #nix.linux-builder.enable = true;
+  nix.linux-builder.enable = true;
   nix.settings.trusted-users = [ "@admin" ];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
