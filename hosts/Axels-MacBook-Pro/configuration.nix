@@ -13,6 +13,10 @@
     LESSHISTFILE="$HOME/.local/state/less/history";
   };
 
+  environment.shellAliases = {
+    drs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
+  };
+
   users.users.amoutill = {
   name = "amoutill";
   home = "/Users/amoutill/";
