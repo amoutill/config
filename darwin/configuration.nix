@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Setting XDG dirs because macOS
   environment.variables = {
     XDG_CACHE_HOME = "$HOME/.cache";
@@ -49,6 +50,8 @@
     home.stateVersion = "23.11";
   };
 
+  #nix.linux-builder.enable = true;
+  nix.settings.trusted-users = [ "@admin" ];
   #Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
