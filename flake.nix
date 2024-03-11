@@ -11,16 +11,28 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nix-darwin, home-manager, nixpkgs, ... }@inputs: {
+  outputs = { self, nix-darwin, home-manager, nixpkgs, disko, ... }@inputs: {
     darwinConfigurations = { 
       "Axels-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs; };
-        modules = [ 
-          ./hosts/Axels-MacBook-Pro/configuration.nix
+        modules = [
           home-manager.darwinModules.home-manager
+          ./hosts/Axels-MacBook-Pro/configuration.nix
+        ];
+      };
+    };
+    nixosConfigurations = {
+      "trantor" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          disko.nixosModules.disko
+          ./hosts/trantor/configuration.nix
         ];
       };
     };
