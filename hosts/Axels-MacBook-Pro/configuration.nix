@@ -36,7 +36,6 @@
     ripgrep
     norminette
     rustup
-    clang
     xdg-ninja
   ];
 
