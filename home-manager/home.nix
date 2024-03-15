@@ -7,11 +7,14 @@
   programs.bash = {
     enable = true;
     historyFile = "${config.xdg.dataHome}/bash/history";
+    enableVteIntegration = true;
   };
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
     history.path = "${config.xdg.dataHome}/zsh/history";
+    enableAutosuggestions = true;
+    enableVteIntegration = true;
   };
   programs.git = {
     enable = true;

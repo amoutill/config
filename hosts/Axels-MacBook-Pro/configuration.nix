@@ -15,7 +15,7 @@
   };
 
   environment.shellAliases = {
-    drs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
+    nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
   };
 
   users.users.amoutill = {
@@ -38,6 +38,7 @@
     norminette
     rustup
     xdg-ninja
+    htop
   ];
 
   fonts = {
