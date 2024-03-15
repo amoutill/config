@@ -7,10 +7,6 @@
         content = {
           type = "gpt";
           partitions = {
-            BOOT = {
-              size = "1M";
-              type = "EF02";
-            };
             ESP = {
               type = "EF00";
               size = "1G";
@@ -35,10 +31,6 @@
         content = {
           type = "gpt";
           partitions = {
-            BOOT = {
-              size = "1M";
-              type = "EF02";
-            };
             ESP = {
               type = "EF00";
               size = "1G";
@@ -63,10 +55,6 @@
         content = {
           type = "gpt";
           partitions = {
-            BOOT = {
-              size = "1M";
-              type = "EF02";
-            };
             ESP = {
               type = "EF00";
               size = "1G";
@@ -91,10 +79,6 @@
         content = {
           type = "gpt";
           partitions = {
-            BOOT = {
-              size = "1M";
-              type = "EF02";
-            };
             ESP = {
               type = "EF00";
               size = "1G";
