@@ -35,6 +35,12 @@
           ./hosts/trantor/configuration.nix
         ];
       };
+      "nixos-vm" =  nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./hosts/nixos-vm/configuration.nix
+        ];
+      };
     };
     homeConfigurations = {
       "42lehavre" = home-manager.lib.homeManagerConfiguration {
