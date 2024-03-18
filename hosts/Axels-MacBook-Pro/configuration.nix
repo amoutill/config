@@ -11,10 +11,11 @@
     CARGO_HOME = "$HOME/.local/state/cargo";
     RUSTUP_HOME = "$HOME/.local/state/rustup";
     LESSHISTFILE="$HOME/.local/state/less/history";
+    MANPATH = "$MANPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man";
   };
 
   environment.shellAliases = {
-    drs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
+    nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
   };
 
   users.users.amoutill = {
@@ -36,8 +37,8 @@
     ripgrep
     norminette
     rustup
-    clang
     xdg-ninja
+    htop
   ];
 
   fonts = {
