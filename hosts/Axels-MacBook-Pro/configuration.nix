@@ -39,6 +39,7 @@
     rustup
     xdg-ninja
     htop
+    sshfs
   ];
 
   fonts = {
