@@ -23,7 +23,20 @@
   home = "/Users/amoutill/";
   };
 
-  nix.linux-builder.enable = true;
+  nix.linux-builder = {
+    enable = true;
+    ephemeral = true;
+    maxJobs = 4;
+    config = {
+      virtualisation = {
+        darwin-builder = {
+          diskSize = 40 * 1024;
+          memorySize = 8 * 1024;
+        };
+        cores = 6;
+      };
+    };
+  };
   nix.settings.trusted-users = [ "@admin" ];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
