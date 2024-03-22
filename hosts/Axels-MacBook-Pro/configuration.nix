@@ -54,6 +54,7 @@
     htop
     sshfs
     tigervnc
+    qemu
     podman
     podman-compose
     podman-tui
