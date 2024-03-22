@@ -11,10 +11,6 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nix-darwin, home-manager, nixpkgs, disko, ... }@inputs: {
@@ -24,21 +20,6 @@
         modules = [
           home-manager.darwinModules.home-manager
           ./hosts/Axels-MacBook-Pro/configuration.nix
-        ];
-      };
-    };
-    nixosConfigurations = {
-      "trantor" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          disko.nixosModules.disko
-          ./hosts/trantor/configuration.nix
-        ];
-      };
-      "nixos-vm" =  nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
-        modules = [
-          ./hosts/nixos-vm/configuration.nix
         ];
       };
     };

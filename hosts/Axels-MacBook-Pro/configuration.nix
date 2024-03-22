@@ -53,6 +53,10 @@
     xdg-ninja
     htop
     sshfs
+    tigervnc
+    podman
+    podman-compose
+    podman-tui
   ];
 
   fonts = {
@@ -66,6 +70,10 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.amoutill = import ../../home-manager/home.nix;
+  };
+
+  services.tailscale = {
+    enable = true;
   };
 
   # Auto upgrade nix package and the daemon service.
