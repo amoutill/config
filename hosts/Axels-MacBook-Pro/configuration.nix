@@ -45,7 +45,7 @@
   environment.systemPackages = with pkgs; [
     iterm2
     wget
-    npm
+    nodePackages.npm
     rectangle
     mos
     utm
