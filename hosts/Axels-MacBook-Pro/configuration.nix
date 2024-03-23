@@ -18,6 +18,8 @@
     nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
   };
 
+  environment.pathsToLink = ["/share/qemu"];
+
   users.users.amoutill = {
   name = "amoutill";
   home = "/Users/amoutill/";
@@ -42,6 +44,8 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   environment.systemPackages = with pkgs; [
     iterm2
+    wget
+    npm
     rectangle
     mos
     utm
@@ -58,6 +62,7 @@
     podman
     podman-compose
     podman-tui
+    butane
   ];
 
   fonts = {
