@@ -13,7 +13,7 @@
     enable = true;
     dotDir = ".config/zsh";
     history.path = "${config.xdg.dataHome}/zsh/history";
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableVteIntegration = true;
   };
   programs.git = {
@@ -27,6 +27,10 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+  };
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacsMacport;
   };
   home.stateVersion = "23.11";
 }

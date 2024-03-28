@@ -18,7 +18,16 @@
     nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
   };
 
-  environment.pathsToLink = ["/share/qemu"];
+  environment.pathsToLink = [ "/share/qemu" ];
+  networking = {
+    computerName = "Axel's MacBook Pro";
+    hostName = "Axels-MacBook-Pro";
+    knownNetworkServices = [
+      "Wi-Fi"
+      "Thunderbolt Bridge"
+    ];
+    # dns = [ "100.100.100.100" "9.9.9.9" ];
+  };
 
   users.users.amoutill = {
   name = "amoutill";
@@ -43,12 +52,8 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
   environment.systemPackages = with pkgs; [
-    iterm2
     wget
     nodePackages.npm
-    rectangle
-    mos
-    utm
     discord
     neovim
     ripgrep
@@ -63,7 +68,21 @@
     podman-compose
     podman-tui
     butane
+    virt-viewer
+    fd
   ];
+    homebrew = {
+      enable = true;
+      casks = [
+        "iterm2"
+        "rectangle"
+        "mos"
+        "utm"
+        "firefox"
+        "tailscale"
+      ];
+    };
+
 
   fonts = {
     fontDir.enable = true;
@@ -78,9 +97,10 @@
     users.amoutill = import ../../home-manager/home.nix;
   };
 
-  services.tailscale = {
-    enable = true;
-  };
+  #services.tailscale = {
+  #  enable = true;
+  #  overrideLocalDns = true;
+  #};
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
