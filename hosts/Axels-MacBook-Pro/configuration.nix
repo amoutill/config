@@ -80,6 +80,7 @@
         "utm"
         "firefox"
         "tailscale"
+        "eloston-chromium"
       ];
     };
 
