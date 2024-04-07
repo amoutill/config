@@ -15,6 +15,9 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
     autosuggestion.enable = true;
     enableVteIntegration = true;
+    initExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
   };
   programs.git = {
     enable = true;

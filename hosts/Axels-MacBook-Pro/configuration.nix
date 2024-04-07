@@ -16,6 +16,7 @@
 
   environment.shellAliases = {
     nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
+    tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
   };
 
   environment.pathsToLink = [ "/share/qemu" ];
@@ -61,18 +62,14 @@
     rustup
     xdg-ninja
     htop
-    sshfs
-    tigervnc
-    qemu
-    podman
-    podman-compose
-    podman-tui
-    butane
-    virt-viewer
     fd
+    kubernetes-helm
   ];
     homebrew = {
       enable = true;
+      brews = [
+        "incus"
+      ];
       casks = [
         "iterm2"
         "rectangle"
@@ -81,6 +78,9 @@
         "firefox"
         "tailscale"
         "eloston-chromium"
+        "jdownloader"
+        "android-file-transfer"
+        "steam"
       ];
     };
 
