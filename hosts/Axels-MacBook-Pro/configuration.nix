@@ -80,15 +80,10 @@
         "rectangle"
         "mos"
         "utm"
-        "firefox"
         "tailscale"
-        "eloston-chromium"
-        "jdownloader"
-        "android-file-transfer"
         "steam"
       ];
     };
-
 
   fonts = {
     fontDir.enable = true;
@@ -110,7 +105,6 @@
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
 
   security.pam.enableSudoTouchIdAuth = true;
 
@@ -118,7 +112,6 @@
     use-xdg-base-directories = true
     '';
 
-  # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
   programs.bash.enable = true;
 

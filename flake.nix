@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { self, nix-darwin, home-manager, nixpkgs, disko, ... }@inputs: {
+  outputs = { self, nix-darwin, home-manager, nixpkgs, ... }@inputs: {
     darwinConfigurations = { 
       "Axels-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs; };
