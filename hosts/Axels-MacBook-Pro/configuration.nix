@@ -14,6 +14,8 @@
     MANPATH = "$MANPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man";
   };
 
+  environment.shells = [ pkgs.nushell ];
+
   environment.shellAliases = {
     nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
     tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
@@ -33,6 +35,7 @@
   users.users.amoutill = {
   name = "amoutill";
   home = "/Users/amoutill/";
+  shell = pkgs.nushell;
   };
 
   nix.linux-builder = {
@@ -53,6 +56,9 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
   environment.systemPackages = with pkgs; [
+    nushell
+    nushellPlugins.gstat
+    zellij
     wget
     nodePackages.npm
     discord
