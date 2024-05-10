@@ -18,15 +18,7 @@
       enableVteIntegration = true;
       initExtra = ''
         eval "$(/opt/homebrew/bin/brew shellenv)"
-        exec nu
       '';
-    };
-    nushell = {
-      enable = true;
-    };
-    carapace = {
-      enable = true;
-      enableNushellIntegration = true;
     };
     zellij = {
       enable = true;

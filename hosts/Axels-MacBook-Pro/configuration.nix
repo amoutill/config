@@ -56,8 +56,6 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
   environment.systemPackages = with pkgs; [
-    nushell
-    nushellPlugins.gstat
     zellij
     wget
     nodePackages.npm
