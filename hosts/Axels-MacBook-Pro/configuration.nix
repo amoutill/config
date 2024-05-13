@@ -35,7 +35,6 @@
   users.users.amoutill = {
   name = "amoutill";
   home = "/Users/amoutill/";
-  shell = pkgs.nushell;
   };
 
   nix.linux-builder = {
@@ -56,7 +55,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
   environment.systemPackages = with pkgs; [
-    zellij
+    tmux
     wget
     nodePackages.npm
     discord

@@ -20,8 +20,12 @@
         eval "$(/opt/homebrew/bin/brew shellenv)"
       '';
     };
-    zellij = {
+    tmux = {
       enable = true;
+      clock24 = true;
+      keyMode = "vi";
+      mouse = true;
+      sensibleOnTop = true;
     };
     git = {
       enable = true;
