@@ -85,6 +85,7 @@
         "utm"
         "tailscale"
         "steam"
+        "firefox"
       ];
     };
 
