@@ -20,7 +20,6 @@
     };
     pathsToLink = [ "/share/qemu" ];
     systemPackages = with pkgs; [
-      tmux
       wget
       nodePackages.npm
       discord
@@ -73,7 +72,7 @@
   };
 
   nixpkgs = {
-    allowUnfree = true;
+    config.allowUnfree = true;
     hostPlatform = "aarch64-darwin";
   };
 
@@ -124,6 +123,13 @@
   programs = {
     zsh.enable = true;
     bash.enable = true;
+    tmux = {
+      enable = true;
+      enableMouse = true;
+      enableSensible = true;
+      enableVim = true;
+      iTerm2 = true;
+    };
   };
 
   # Used for backwards compatibility, please read the changelog before changing.
