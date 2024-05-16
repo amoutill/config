@@ -1,27 +1,40 @@
 { config, pkgs, ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Setting XDG dirs because macOS
-  environment.variables = {
-    XDG_CACHE_HOME = "$HOME/.cache";
-    XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME = "$HOME/.local/share";
-    XDG_STATE_HOME = "$HOME/.local/state";
-    CARGO_HOME = "$HOME/.local/state/cargo";
-    RUSTUP_HOME = "$HOME/.local/state/rustup";
-    LESSHISTFILE="$HOME/.local/state/less/history";
-    MANPATH = "$MANPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man";
+  environment = {
+    variables = {
+      XDG_CACHE_HOME = "$HOME/.cache";
+      XDG_CONFIG_HOME = "$HOME/.config";
+      XDG_DATA_HOME = "$HOME/.local/share";
+      XDG_STATE_HOME = "$HOME/.local/state";
+      CARGO_HOME = "$HOME/.local/state/cargo";
+      RUSTUP_HOME = "$HOME/.local/state/rustup";
+      LESSHISTFILE="$HOME/.local/state/less/history";
+      MANPATH = "$MANPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man";
+    };
+    shells = [ pkgs.nushell ];
+    shellAliases = {
+      nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
+      tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
+    };
+    pathsToLink = [ "/share/qemu" ];
+    systemPackages = with pkgs; [
+      tmux
+      wget
+      nodePackages.npm
+      discord
+      neovim
+      ripgrep
+      norminette
+      rustup
+      xdg-ninja
+      htop
+      fd
+      kubernetes-helm
+    ];
   };
-
-  environment.shells = [ pkgs.nushell ];
-
-  environment.shellAliases = {
-    nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
-    tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
-  };
-
-  environment.pathsToLink = [ "/share/qemu" ];
+  
   networking = {
     computerName = "Axel's MacBook Pro";
     hostName = "Axels-MacBook-Pro";
@@ -37,57 +50,53 @@
   home = "/Users/amoutill/";
   };
 
-  nix.linux-builder = {
-    enable = true;
-    ephemeral = true;
-    maxJobs = 4;
-    config = {
-      virtualisation = {
-        darwin-builder = {
-          diskSize = 40 * 1024;
-          memorySize = 8 * 1024;
-        };
-        cores = 6;
-      };
-    };
-  };
-  nix.settings.trusted-users = [ "@admin" ];
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.hostPlatform = "aarch64-darwin";
-  environment.systemPackages = with pkgs; [
-    tmux
-    wget
-    nodePackages.npm
-    discord
-    neovim
-    ripgrep
-    norminette
-    rustup
-    xdg-ninja
-    htop
-    fd
-    kubernetes-helm
-  ];
-    homebrew = {
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    linux-builder = {
       enable = true;
-      onActivation = {
-        autoUpdate = true;
-        upgrade = true;
-        cleanup = "zap";
+      ephemeral = true;
+      maxJobs = 4;
+      config = {
+        virtualisation = {
+          darwin-builder = {
+            diskSize = 40 * 1024;
+            memorySize = 8 * 1024;
+          };
+          cores = 6;
+        };
       };
-      brews = [
-        "incus"
-      ];
-      casks = [
-        "iterm2"
-        "rectangle"
-        "mos"
-        "utm"
-        "tailscale"
-        "steam"
-        "firefox"
-      ];
     };
+    settings.trusted-users = [ "@admin" ];
+    extraOptions = ''
+      use-xdg-base-directories = true
+    '';
+  };
+
+  nixpkgs = {
+    allowUnfree = true;
+    hostPlatform = "aarch64-darwin";
+  };
+
+  homebrew = {
+    enable = true;
+    onActivation = {
+      autoUpdate = true;
+      upgrade = true;
+      cleanup = "zap";
+    };
+    brews = [
+      "incus"
+    ];
+    casks = [
+      "iterm2"
+      "rectangle"
+      "mos"
+      "utm"
+      "tailscale"
+      "steam"
+      "firefox"
+    ];
+  };
 
   fonts = {
     fontDir.enable = true;
@@ -112,12 +121,10 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
-  nix.extraOptions = ''
-    use-xdg-base-directories = true
-    '';
-
-  programs.zsh.enable = true;
-  programs.bash.enable = true;
+  programs = {
+    zsh.enable = true;
+    bash.enable = true;
+  };
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
