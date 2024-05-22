@@ -128,7 +128,9 @@
       enableMouse = true;
       enableSensible = true;
       enableVim = true;
-      iTerm2 = true;
+      extraConfig = ''
+        setw -g aggressive-resize off
+      '';
     };
   };
 
