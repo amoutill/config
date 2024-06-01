@@ -94,6 +94,7 @@
       "tailscale"
       "steam"
       "firefox"
+      "proton-mail"
     ];
   };
 
