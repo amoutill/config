@@ -119,6 +119,10 @@
         name = "proton-mail";
         greedy = true;
       }
+      {
+        name = "element";
+        greedy = true;
+      }
     ];
   };
 
