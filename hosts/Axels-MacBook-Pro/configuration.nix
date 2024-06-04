@@ -87,14 +87,38 @@
       "incus"
     ];
     casks = [
-      "iterm2"
-      "rectangle"
-      "mos"
-      "utm"
-      "tailscale"
-      "steam"
-      "firefox"
-      "proton-mail"
+      {
+        name = "iterm2";
+        greedy = true;
+      }
+      {
+        name = "rectangle";
+        greedy = true;
+      }
+      {
+        name = "mos";
+        greedy = true;
+      }
+      {
+        name = "utm";
+        greedy = true;
+      }
+      {
+        name = "tailscale";
+        greedy = true;
+      }
+      {
+        name = "steam";
+        greedy = true;
+      }
+      {
+        name = "firefox";
+        greedy = true;
+      }
+      {
+        name = "proton-mail";
+        greedy = true;
+      }
     ];
   };
 
