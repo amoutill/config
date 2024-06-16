@@ -33,7 +33,7 @@
       kubernetes-helm
     ];
   };
-  
+  nix.configureBuildUsers = false; # Temporary fix on MacOS Sequoia
   networking = {
     computerName = "Axel's MacBook Pro";
     hostName = "Axels-MacBook-Pro";
@@ -91,10 +91,10 @@
         name = "iterm2";
         greedy = true;
       }
-      {
-        name = "rectangle";
-        greedy = true;
-      }
+#      {
+#        name = "rectangle";
+#        greedy = true;
+#      }
       {
         name = "mos";
         greedy = true;
@@ -126,12 +126,9 @@
     ];
   };
 
-  fonts = {
-    fontDir.enable = true;
-    fonts = [
-      pkgs.nerdfonts
-    ];
-  };
+  fonts.packages = [
+    pkgs.nerdfonts
+  ];
 
   home-manager = {
     useGlobalPkgs = true;
