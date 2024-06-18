@@ -83,6 +83,19 @@
       upgrade = true;
       cleanup = "zap";
     };
+    masApps = {
+      "Prime Video" = 545519333;
+      "Microsoft Remote Desktop" = 1295203466;
+      "Parcel" = 639968404;
+      "Xcode" = 497799835;
+      "Pages" = 409201541;
+      "WhatsApp" = 310633997;
+      "Keynote" = 409183694;
+      "Microsoft Word" = 462054704;
+      "The Unarchiver" = 425424353;
+      "Slack" = 803453959;
+      "Numbers" = 409203825;
+    };
     brews = [
       "incus"
     ];
