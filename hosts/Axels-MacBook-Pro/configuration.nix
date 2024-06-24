@@ -136,6 +136,10 @@
         name = "element";
         greedy = true;
       }
+      {
+        name = "logi-options-plus";
+        greedy = true;
+      }
     ];
   };
 
