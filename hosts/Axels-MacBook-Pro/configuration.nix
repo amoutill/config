@@ -140,6 +140,10 @@
         name = "logi-options-plus";
         greedy = true;
       }
+      {
+        name = "zed";
+        greedy = true;
+      }
     ];
   };
 
