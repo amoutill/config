@@ -17,6 +17,7 @@
     shellAliases = {
       nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
       tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
+      z = "zed";
     };
     pathsToLink = [ "/share/qemu" ];
     systemPackages = with pkgs; [
