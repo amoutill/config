@@ -144,6 +144,10 @@
         name = "zed";
         greedy = true;
       }
+      {
+        name = "chatgpt";
+        greedy = true;
+      }
     ];
   };
 
