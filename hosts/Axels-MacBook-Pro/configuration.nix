@@ -32,6 +32,7 @@
       htop
       fd
       kubernetes-helm
+      clang-tools
     ];
   };
   nix.configureBuildUsers = false; # Temporary fix on MacOS Sequoia
