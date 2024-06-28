@@ -150,6 +150,14 @@
         name = "chatgpt";
         greedy = true;
       }
+      {
+        name = "clion";
+        greedy = true;
+      }
+      {
+        name = "rustrover";
+        greedy = true;
+      }
     ];
   };
 
