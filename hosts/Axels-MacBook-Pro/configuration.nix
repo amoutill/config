@@ -11,7 +11,7 @@
       CARGO_HOME = "$HOME/.local/state/cargo";
       RUSTUP_HOME = "$HOME/.local/state/rustup";
       LESSHISTFILE="$HOME/.local/state/less/history";
-      MANPATH = "$MANPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man";
+      MANPATH = "$MANPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$HOME/.local/share/man/";
     };
     shells = [ pkgs.nushell ];
     shellAliases = {
