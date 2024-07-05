@@ -35,6 +35,7 @@
       clang-tools
       gnumake
       bear
+      binutils
     ];
   };
   nix.configureBuildUsers = false; # Temporary fix on MacOS Sequoia
