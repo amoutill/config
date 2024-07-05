@@ -99,6 +99,8 @@
       "The Unarchiver" = 425424353;
       "Slack" = 803453959;
       "Numbers" = 409203825;
+      "TestFlight" = 899247664;
+      "Apple Developper" = 640199958;
     };
     brews = [
       "incus"
