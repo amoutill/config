@@ -20,6 +20,7 @@
         eval "$(/opt/homebrew/bin/brew shellenv)"
       '';
     };
+    programs.starship.enable = true;
     git = {
       enable = true;
       userName = "amoutill";
