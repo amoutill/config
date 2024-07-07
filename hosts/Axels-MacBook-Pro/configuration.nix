@@ -23,7 +23,6 @@
     systemPackages = with pkgs; [
       wget
       nodePackages.npm
-      discord
       neovim
       ripgrep
       norminette
@@ -31,10 +30,8 @@
       xdg-ninja
       htop
       fd
-      kubernetes-helm
     ];
   };
-  nix.configureBuildUsers = false; # Temporary fix on MacOS Sequoia
   networking = {
     computerName = "Axel's MacBook Pro";
     hostName = "Axels-MacBook-Pro";
@@ -88,11 +85,9 @@
       "Prime Video" = 545519333;
       "Microsoft Remote Desktop" = 1295203466;
       "Parcel" = 639968404;
-      "Xcode" = 497799835;
       "Pages" = 409201541;
       "WhatsApp" = 310633997;
       "Keynote" = 409183694;
-      "Microsoft Word" = 462054704;
       "The Unarchiver" = 425424353;
       "Slack" = 803453959;
       "Numbers" = 409203825;
@@ -157,6 +152,10 @@
       }
       {
         name = "rustrover";
+        greedy = true;
+      }
+      {
+        name = "discord";
         greedy = true;
       }
     ];
