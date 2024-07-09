@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports =
+    [
+      ../common.nix
+    ];
   # Setting XDG dirs because macOS
   environment = {
     variables = {
@@ -47,7 +51,6 @@
   };
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
     linux-builder = {
       enable = true;
       ephemeral = true;
@@ -63,9 +66,6 @@
       };
     };
     settings.trusted-users = [ "@admin" ];
-    extraOptions = ''
-      use-xdg-base-directories = true
-    '';
   };
 
   nixpkgs = {
