@@ -23,12 +23,14 @@
         ];
       };
     };
-    homeConfigurations = {
-      "42lehavre" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    nixosConfigurations = {
+      "nixos-vm" = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        system = "aarch64-linux";
         modules = [
-          ./hosts/42lehavre/home.nix
-        ];
+          ./hosts/nixos-vm/configuration.nix
+	  home-manager.nixosModules.home-manager
+	];
       };
     };
   };
