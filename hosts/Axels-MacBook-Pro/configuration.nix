@@ -13,7 +13,6 @@
       LESSHISTFILE="$HOME/.local/state/less/history";
       MANPATH = "$MANPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$HOME/.local/share/man/";
     };
-    shells = [ pkgs.nushell ];
     shellAliases = {
       nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
       tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
