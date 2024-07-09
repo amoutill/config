@@ -16,9 +16,6 @@
       history.path = "${config.xdg.dataHome}/zsh/history";
       autosuggestion.enable = true;
       enableVteIntegration = true;
-      initExtra = ''
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-      '';
     };
     starship.enable = true;
     git = {
@@ -32,10 +29,6 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-    };
-    emacs = {
-      enable = true;
-      package = pkgs.emacsMacport;
     };
   };
   home.stateVersion = "23.11";

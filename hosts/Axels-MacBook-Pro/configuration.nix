@@ -50,6 +50,13 @@
   home = "/Users/amoutill/";
   };
 
+  home-manager.users.amoutill = {
+    programs.zsh.initExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
+  };
+
+
   nix = {
     linux-builder = {
       enable = true;
