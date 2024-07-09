@@ -157,6 +157,10 @@
         name = "discord";
         greedy = true;
       }
+      {
+        name = "balenaetcher";
+        greedy = true;
+      }
     ];
   };
 
