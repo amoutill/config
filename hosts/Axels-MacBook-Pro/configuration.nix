@@ -168,12 +168,6 @@
     pkgs.nerdfonts
   ];
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.amoutill = import ../../home-manager/home.nix;
-  };
-
   #services.tailscale = {
   #  enable = true;
   #  overrideLocalDns = true;
