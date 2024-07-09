@@ -37,6 +37,14 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    gnumake
+    unzip
+    ripgrep
+    fd
+    nodePackages.npm
+    clang
+    clang-tools
+    rustup
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
