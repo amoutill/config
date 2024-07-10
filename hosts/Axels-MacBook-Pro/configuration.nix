@@ -87,6 +87,7 @@
       upgrade = true;
       cleanup = "zap";
     };
+    taps = [ "railwaycat/emacsmacport" ];
     masApps = {
       "Prime Video" = 545519333;
       "Microsoft Remote Desktop" = 1295203466;
@@ -102,6 +103,10 @@
     };
     brews = [
       "incus"
+      {
+        name = "emacs-mac";
+        args = [ "with-modules" ];
+      }
     ];
     casks = [
       {
