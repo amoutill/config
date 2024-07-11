@@ -33,6 +33,7 @@
       xdg-ninja
       htop
       fd
+      clang
     ];
   };
   networking = {
@@ -103,6 +104,7 @@
     };
     brews = [
       "incus"
+      "xcodes"
       {
         name = "emacs-mac";
         args = [ "with-modules" ];
