@@ -33,7 +33,6 @@
       xdg-ninja
       htop
       fd
-      clang
     ];
   };
   networking = {
