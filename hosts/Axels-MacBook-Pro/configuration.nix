@@ -16,6 +16,9 @@
       RUSTUP_HOME = "$HOME/.local/state/rustup";
       LESSHISTFILE="$HOME/.local/state/less/history";
       MANPATH = "$MANPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:$HOME/.local/share/man/";
+      PAGER = "page";
+      MANPAGER = "page -t man";
+      GIT_PAGER = "page -t git";
     };
     shellAliases = {
       nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
@@ -27,6 +30,7 @@
       wget
       nodePackages.npm
       neovim
+      page
       ripgrep
       norminette
       rustup
