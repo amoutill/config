@@ -22,6 +22,9 @@
       enable = true;
       userName = "amoutill";
       userEmail = "amoutill@student.42lehavre.fr";
+      extraConfig = {
+        color.pager = false;
+      };
     };
     neovim = {
       enable = true;

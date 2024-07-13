@@ -51,7 +51,7 @@
 
   users.users.amoutill = {
   name = "amoutill";
-  home = "/Users/amoutill/";
+  home = "/Users/amoutill";
   };
 
   home-manager.users.amoutill = {
