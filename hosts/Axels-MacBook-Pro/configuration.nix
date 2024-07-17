@@ -178,6 +178,10 @@
         name = "balenaetcher";
         greedy = true;
       }
+      {
+        name = "vmware-fusion";
+        greedy = true;
+      }
     ];
   };
 

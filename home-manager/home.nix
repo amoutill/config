@@ -18,6 +18,10 @@
       enableVteIntegration = true;
     };
     starship.enable = true;
+    gpg = {
+      enable = true;
+      homedir = "${config.xdg.dataHome}/gnupg";
+    };
     git = {
       enable = true;
       userName = "amoutill";
