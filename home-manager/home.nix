@@ -26,6 +26,10 @@
       enable = true;
       userName = "amoutill";
       userEmail = "amoutill@student.42lehavre.fr";
+      signing = {
+        key = "9F12E898453A8058";
+        signByDefault = true;
+      };
       extraConfig = {
         color.pager = false;
       };
