@@ -16,12 +16,14 @@
       history.path = "${config.xdg.dataHome}/zsh/history";
       autosuggestion.enable = true;
       enableVteIntegration = true;
+      profileExtra = ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        export GPG_TTY=$(tty)
+        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+        gpgconf --launch gpg-agent
+      '';
     };
     starship.enable = true;
-    gpg = {
-      enable = true;
-      homedir = "${config.xdg.dataHome}/gnupg";
-    };
     git = {
       enable = true;
       userName = "amoutill";
