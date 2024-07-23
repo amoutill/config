@@ -38,6 +38,8 @@
       xdg-ninja
       htop
       fd
+      kubectl
+      kubernetes-helm
     ];
   };
   networking = {
