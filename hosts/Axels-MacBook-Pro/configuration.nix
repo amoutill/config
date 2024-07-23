@@ -101,6 +101,7 @@
       "Numbers" = 409203825;
       "TestFlight" = 899247664;
       "Apple Developper" = 640199958;
+      "Home Assistant" = 1099568401;
     };
     brews = [
       "incus"
