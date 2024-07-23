@@ -40,6 +40,7 @@
       fd
       kubectl
       kubernetes-helm
+      cmctl
     ];
   };
   networking = {
