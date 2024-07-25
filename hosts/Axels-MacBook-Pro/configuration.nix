@@ -188,6 +188,10 @@
         name = "free-gpgmail";
         greedy = true;
       }
+      {
+        name = "xquartz";
+        greedy = true;
+      }
     ];
   };
 
