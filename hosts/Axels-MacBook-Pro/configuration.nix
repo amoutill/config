@@ -22,7 +22,6 @@
     };
     shellAliases = {
       nrs = "darwin-rebuild switch --flake ~/.config/nix/#Axels-MacBook-Pro";
-      tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
       z = "zed";
     };
     systemPath = [ "/usr/local/MacGPG2/bin/" ];
@@ -130,10 +129,6 @@
         greedy = true;
       }
       {
-        name = "tailscale";
-        greedy = true;
-      }
-      {
         name = "steam";
         greedy = true;
       }
@@ -200,10 +195,10 @@
     pkgs.nerdfonts
   ];
 
-  #services.tailscale = {
-  #  enable = true;
-  #  overrideLocalDns = true;
-  #};
+  services.tailscale = {
+    enable = true;
+    #    overrideLocalDns = true;
+  };
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
