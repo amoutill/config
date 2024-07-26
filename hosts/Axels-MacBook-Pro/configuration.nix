@@ -41,6 +41,7 @@
       kubectl
       kubernetes-helm
       cmctl
+      fluxcd
     ];
   };
   networking = {
