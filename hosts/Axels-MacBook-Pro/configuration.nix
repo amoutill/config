@@ -42,6 +42,7 @@
       cmctl
       fluxcd
       kubeseal
+      toybox
     ];
   };
   networking = {
